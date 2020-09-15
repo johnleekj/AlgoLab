@@ -2,9 +2,12 @@
 filename = 'test.fna'
 test = open(filename)
 testread = test.read()
+print(testread)
 tofind = "TTTATACCTTCC"
-#testread = "geeksforgeeks"
-#tofind = "geeks"
+# =============================================================================
+# testread = "geeksforgeeks"
+# tofind = "geeks"
+# =============================================================================
 count = 0
 LengthOfToFind = len(tofind)
 LengthOfTestRead = len(testread)
