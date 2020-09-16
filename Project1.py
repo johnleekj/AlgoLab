@@ -48,15 +48,6 @@ def kmp(text, pattern):
                 if pattern[pattern_i] == text[text_i]:
                     pattern_i += 1
                     break
-def main():
-    filename = input("Please input file location\n")
-    filename = filename[1:len(filename)-2]
-    print(filename)
-    genome_file = open(filename)
-    genome_string = genome_file.read()
-    genome_string = genome_string[genome_string.find('\n'):]
-    print(genome_string)
-
     
 # Fills Z array for given string str[] 
 def getZarr(string, z): 
@@ -133,6 +124,16 @@ def BruteForce_search(text, pattern):
                 break
             if (y + 1 == len(pattern)):
                 print("found at index " + str(x))
+
+def main():
+    filename = input("Please input file location\n")
+    filename = filename[1:len(filename)-2]
+    print(filename)
+    genome_file = open(filename)
+    genome_string = genome_file.read()
+    genome_string = genome_string[genome_string.find('\n'):]
+    print(genome_string)
+    
                 
 if __name__ == '__main__':
     main()
