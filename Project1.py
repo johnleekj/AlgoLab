@@ -3,7 +3,7 @@
 Algo lab proj 1
 """
 
-#Building prefix array
+#Building prefix array for kmp
 
 def buildarray(pattern):
     list = [0]
@@ -38,7 +38,7 @@ def kmp(text, pattern):
             pattern_i += 1
             if pattern_i == len(pattern):
                 found_index = text_i - len(pattern) + 1
-                print("Found at index: " + str(found_index))
+                print("Pattern found at index: " + str(found_index))
                 pattern_i = prefix_arr[pattern_i-1]
 
         else:
@@ -123,7 +123,7 @@ def BruteForce_search(text, pattern):
             if(text[y+x] != pattern[y]):
                 break
             if (y + 1 == len(pattern)):
-                print("found at index " + str(x))
+                print("Pattern found at index " + str(x))
 
 def main():
     filename = input("Please input file location:\n")
@@ -134,16 +134,24 @@ def main():
     genome_string = genome_string[genome_string.find('\n')+1:]
     pattern = input("Please input pattern to find:\n")
     #pattern = "TGACAGA"
-    select = input("Enter input 1-3\n") #Placeholder
-    select = int(select)
-    if (select == 1):
-        BruteForce_search(genome_string, pattern)
-    elif (select == 2):
-        kmp(genome_string, pattern)
-    elif (select == 3):
-        searchZ(genome_string, pattern)
-    else:
-        print("error")
+    canloop = True
+    while canloop: #easier to test algo
+        print("--------------------------")
+        print("Available algorithms")
+        print("1.Brute Force")
+        print("2.KMP")
+        print("3.Z Algo") 
+        select = input("Enter input 1-3\n") #Placeholder
+        select = int(select)
+        if (select == 1):
+            BruteForce_search(genome_string, pattern)
+        elif (select == 2):
+            kmp(genome_string, pattern)
+        elif (select == 3):
+            searchZ(genome_string, pattern)
+        else: #key in anything else to exit loop
+            print("error")
+            canloop = False
     
 
     
