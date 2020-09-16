@@ -126,13 +126,27 @@ def BruteForce_search(text, pattern):
                 print("found at index " + str(x))
 
 def main():
-    filename = input("Please input file location\n")
-    filename = filename[1:len(filename)-2]
-    print(filename)
+    filename = input("Please input file location:\n")
+    filename = filename[1:len(filename)-1]
+    #print(filename)
     genome_file = open(filename)
     genome_string = genome_file.read()
     genome_string = genome_string[genome_string.find('\n'):]
-    print(genome_string)
+    pattern = input("Please input pattern to find:\n")
+    #pattern = "TGACAGA"
+    select = input("Enter input 1-3\n") #Placeholder
+    select = int(select)
+
+    if (select == 1):
+        BruteForce_search(genome_string, pattern)
+    elif (select == 2):
+        kmp(genome_string, pattern)
+    elif (select == 3):
+        searchZ(genome_string, pattern)
+    else:
+        print("error")
+    
+
     
                 
 if __name__ == '__main__':
