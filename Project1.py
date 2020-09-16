@@ -131,12 +131,11 @@ def main():
     #print(filename)
     genome_file = open(filename)
     genome_string = genome_file.read()
-    genome_string = genome_string[genome_string.find('\n'):]
+    genome_string = genome_string[genome_string.find('\n')+1:]
     pattern = input("Please input pattern to find:\n")
     #pattern = "TGACAGA"
     select = input("Enter input 1-3\n") #Placeholder
     select = int(select)
-
     if (select == 1):
         BruteForce_search(genome_string, pattern)
     elif (select == 2):
