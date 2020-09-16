@@ -27,8 +27,8 @@ def buildarray(pattern):
 # test = open(filename)
 # text = test.read()
 # tofind = "TTTATACCTTCC"
-text = "aaaabaaaaabbbaaaab"
-pattern = "aaab"
+text = "AAAAAAAAAA"
+pattern = "AAA"
 prefix_arr = buildarray(pattern)
 pattern_i = 0
 for text_i in range(0, len(text)):
