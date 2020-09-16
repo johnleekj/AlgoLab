@@ -75,6 +75,15 @@ def searchZ(text, pattern):
         # length we got the pattern 
         if z[i] == len(pattern): 
             print("Pattern found at index",  
-                      i - len(pattern) - 1)    
+                      i - len(pattern) - 1) 
+            
+def BruteForce_search(text, pattern):
+    for x in range(len(text) - len(pattern) + 1):
+        for y in range(len(pattern)):
+            if(text[y+x] != pattern[y]):
+                break
+            if (y + 1 == len(pattern)):
+                print("found at index " + str(x))
+                
 if __name__ == '__main__':
     main()
