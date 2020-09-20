@@ -4,7 +4,6 @@ Algo lab proj 1
 """
 
 #Building prefix array for kmp
-
 def buildarray(pattern):
     list = [0]
     j = 0
@@ -141,6 +140,7 @@ def main():
         print("1.Brute Force")
         print("2.KMP")
         print("3.Z Algo") 
+        print("4.Enter another file location")
         select = input("Enter input 1-3\n") #Placeholder
         select = int(select)
         if (select == 1):
@@ -149,6 +149,13 @@ def main():
             kmp(genome_string, pattern)
         elif (select == 3):
             searchZ(genome_string, pattern)
+        elif (select == 4):
+            filename = input("Please input file location:\n")
+            filename = filename[1:len(filename)-1]
+            genome_file = open(filename)
+            genome_string = genome_file.read()
+            genome_string = genome_string[genome_string.find('\n')+1:]
+            pattern = input("Please input pattern to find:\n")
         else: #key in anything else to exit loop
             print("error")
             canloop = False

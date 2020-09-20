@@ -1,0 +1,8 @@
+How to use?
+
+Just drag and drop the fna file that you want to test into the terminal when you see "Please input file location" 
+
+Make sure your fna file has text at the top detailing the type of genome as the program would remove the top text as it is not considered in the pattern
+example: ">NC_003197.2 Salmonella enterica subsp. enterica serovar Typhimurium str. LT2, complete genome" 
+
+
